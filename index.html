@@ -1,0 +1,144 @@
+<!--
+Author: Amanda Gbe
+Date: March 4th, 2026
+Description: This is the HTML file for the rock-paper-scissors mobile interactive app 
+-->
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset=utf-8> 
+    <title>Rock-Paper-Scissors</title> 
+    <link rel="stylesheet" href="css/style.css">
+     <script src="js/script.js"></script>
+</head> 
+<body>
+    <div id="splash"> 
+        <canvas id="banner" width="600" height="400"></canvas>
+        <button id="startBtn" class="hide"> Start Game</button>
+    </div>
+    
+    <div id="game" class="hide">
+        <div id="topBar">
+            <button id="quit">Quit</button>
+            <button id="history">History</button>
+            <button id="help">Help</button>
+        </div>
+
+        <div id="levelbarContainer">
+            <div id="levelInfo">
+               ⭐️ Level <span id="levelText">1</span>
+            </div>
+            <div id="progressBar">
+                <div id="progressFill"></div>
+            </div>
+            <div id="progressLabel">
+                Wins to Level 2: 0 / 5
+            </div>
+        </div>
+
+        <div id="arena">
+            <div class="choiceArea">
+                <p class="label"> Computer</p>
+                <div class="choiceBox">
+                    <img id="computerChoiceImg" src="" alt="Computer choice">
+                </div>
+            </div>
+
+            <div id="resultBanner">
+                <p id="result"></p>
+            </div>
+
+            <div class="choiceArea">
+                <p class="label">Player</p>
+                <div class="choiceBox">
+                    <img id="playerChoiceImg" src="" alt="Player choice">
+                </div>
+            </div>
+            <div id="scoreboard">
+                <p id="score">Player: 0 - Computer: 0</p>
+                <p id="final"></p>
+                <p id="highScoreText">High Score: 0</p>
+            </div>
+            
+        </div>
+
+        <div id="bottomChoices">
+            <button class="playBtn" id="rockBtn">
+                <img src="images/rock.png" alt="Rock">
+                <span>rock</span>
+            </button>
+            <button class="playBtn" id="paperBtn">
+                <img src="images/paper.png" alt="Paper">
+                <span>paper</span>
+            </button>
+            <button class="playBtn" id="scissorsBtn">
+                <img src="images/scissors.png" alt="Scissors">
+                <span>Scissors</span>
+            </button>
+            <button class="playBtn locked" id="fireBtn">
+                <img src="images/fire.png" alt="Fire">
+                <span>Fire</span>
+            </button>
+            <button class="playBtn locked" id="spongeBtn">
+                <img src="images/sponge.png" alt="Sponge">
+                <span>Sponge</span>
+            </button>
+            <button class="playBtn locked" id="airBtn">
+                <img src="images/air.png" alt="Air">
+                <span>Air</span>
+            </button>
+            <button class="playBtn locked" id="waterBtn">
+                <img src="images/water.png" alt="Water">
+                <span>Water</span>
+            </button>
+        </div>
+
+        <button id="betBtn" class="hide">Bet</button>
+        <div id="betBox" class="hide">
+            <h3>Bet Move</h3>
+            <p>Spend 5 level wins to guess the computer's next move.</p>
+            <input type="text" id="betInput" placeholder="Type a move">
+            <button id="submitBetBtn">Submit Bet</button>
+            <button id="cancelBetBtn">Cancel</button>
+        </div>
+
+        <p id="winner"></p>
+        <button id="again" class="hide">Play Again</button>
+        
+    </div>
+
+    <div id="helpbox" class="hide">
+        <h3>HOW TO PLAY</h3>
+        <p>
+            Level 1: Basic Rock, Paper, Scissors.<br>
+            Level 2 (5 wins): Unlocks Fire, Water, Air, and Sponge.<br>
+            Level 3 (10 wins): You and the computer cannot use the same move twice in a row.<br>
+            Level 4 (15 wins): Unlocks Bet.<br>
+            Spend 5 level wins to guess the computer's next move.
+            If your guess is correct, you gain 10 wins.
+        </p>
+        <p>
+            <h4>Interaction Table</h4>
+            Rock beats Fire, Sponge, Scissors<br>
+            Paper beats Air, Rock, Water<br>
+            Scissors beats Air, Paper, Sponge <br>
+            Fire beats Scissors, Paper, Sponge <br>
+            Sponge beats Ppaer, Air, Water <br> 
+            Air beats Fire, Rock, Water<br>
+            Water beats Rock, Fire, Scissos
+        </p>
+        <p>The game ends when Level 4 reaches 20 wins.</p>
+        
+        <button id="closeHelp">Close</button>
+    </div>
+
+    
+    <div id="historyBox" class="hide">
+        <h3>Game History</h3>
+        <ul id="historyList"></ul>
+        <button id="closeHistory">Close</button>
+    </div>
+
+    
+</body> 
+</html>
